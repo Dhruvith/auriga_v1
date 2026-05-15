@@ -9,16 +9,16 @@
   
   body {
     font-family: 'Inter', system-ui, sans-serif;
-    background-color: #FFF8EF;
-    color: #1E1E1C;
+    background-color: #f5f3ef;
+    color: #1a1a1a;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
   }
 
   ::selection {
-    background-color: #C6A15B;
-    color: #FFF8EF;
+    background-color: #c9a96e;
+    color: #f5f3ef;
   }
 }
 
@@ -26,59 +26,33 @@
   .text-balance {
     text-wrap: balance;
   }
-
-  .brass-border {
-    border: 1px solid #C6A15B;
-  }
-
-  .glass-ivory {
-    background: rgba(255, 248, 239, 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-  }
-}
-
-@layer utilities {
-  .animation-delay-200 {
-    animation-delay: 200ms;
-  }
-  .animation-delay-400 {
-    animation-delay: 400ms;
-  }
-  .animation-delay-600 {
-    animation-delay: 600ms;
-  }
-  .animation-delay-800 {
-    animation-delay: 800ms;
-  }
 }
 
 /* Smooth scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #F6EFE6;
+  background: #f5f3ef;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #C6A15B;
-  border-radius: 3px;
+  background: #c9a96e;
 }
 
-/* Marquee animation */
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-33.33%);
-  }
+/* Form field bottom border only */
+.input-border-only {
+  border: none;
+  border-bottom: 1px solid #e5e5e5;
+  background: transparent;
+  padding: 0.75rem 0;
+  outline: none;
+  transition: border-color 0.2s ease;
 }
 
-.animate-marquee {
-  animation: marquee 30s linear infinite;
+.input-border-only:focus {
+  border-bottom-color: #c9a96e;
 }
 
 /* Reduced motion */
@@ -89,9 +63,5 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-  }
-  
-  .animate-marquee {
-    animation: none;
   }
 }
