@@ -154,17 +154,17 @@ export default function ServicesSection() {
           })}
         </div>
 
-        <div ref={benefitsRef} className="bg-auriga-charcoal p-8 md:p-12 lg:p-16">
+        <div ref={benefitsRef} className="bg-auriga-marble/50 p-8 md:p-12 lg:p-16 border border-auriga-sand/20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
               <span className="text-[10px] uppercase tracking-[0.3em] text-auriga-brass font-sans font-medium block mb-4">
                 Why Auriga
               </span>
-              <h3 className="font-serif text-2xl md:text-3xl text-auriga-ivory font-medium mb-4">
+              <h3 className="font-serif text-2xl md:text-3xl text-auriga-charcoal font-medium mb-4">
                 The Auriga Difference
               </h3>
-              <p className="text-auriga-ivory/60 text-sm leading-relaxed font-sans font-light">
-                We have built our process around one thing — making the experience of building your home as clear, smooth, and trustworthy as the end result.
+              <p className="text-auriga-charcoal/60 text-sm leading-relaxed font-sans font-light">
+                We have built our process around one thing, making the experience of building your home as clear, smooth, and trustworthy as the end result.
               </p>
             </div>
             <div className="flex flex-col justify-center">
@@ -172,13 +172,13 @@ export default function ServicesSection() {
                 {benefits.map((benefit) => (
                   <li key={benefit} className="flex items-start gap-3">
                     <span className="w-1.5 h-1.5 bg-auriga-brass rounded-full mt-2 flex-shrink-0" />
-                    <span className="text-sm text-auriga-ivory/70 font-sans font-light">{benefit}</span>
+                    <span className="text-sm text-auriga-charcoal/70 font-sans font-light">{benefit}</span>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
-        </div>
+         </div>
       </div>
     </section>
   );

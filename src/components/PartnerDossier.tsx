@@ -125,7 +125,7 @@ export default function PartnerDossier() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div
           ref={cardRef}
-          className="relative bg-auriga-charcoal overflow-hidden cursor-pointer group"
+          className="relative bg-auriga-marble/30 overflow-hidden cursor-pointer group border border-auriga-sand/40"
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
         >
@@ -138,7 +138,7 @@ export default function PartnerDossier() {
                 hovered ? 'scale-110' : 'scale-100'
               }`}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-auriga-charcoal via-auriga-charcoal/70 to-auriga-charcoal/40" />
+            <div className="absolute inset-0 bg-gradient-to-t from-auriga-ivory via-auriga-ivory/80 to-auriga-ivory/40" />
           </div>
 
           {/* Blueprint SVG Overlay */}
@@ -226,7 +226,7 @@ export default function PartnerDossier() {
             {/* Partner Name */}
             <h3
               ref={nameRef}
-              className="font-serif text-4xl md:text-5xl lg:text-7xl text-auriga-ivory font-medium mt-4 mb-6 leading-[1.05]"
+              className="font-serif text-4xl md:text-5xl lg:text-7xl text-auriga-charcoal font-medium mt-4 mb-6 leading-[1.05]"
             >
               Studio Spectra
             </h3>
@@ -236,22 +236,22 @@ export default function PartnerDossier() {
               <div className="flex items-start gap-3">
                 <Layers className="w-4 h-4 text-auriga-brass mt-0.5" strokeWidth={1.5} />
                 <div>
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-auriga-sand/60 font-sans block">Type</span>
-                  <span className="text-sm text-auriga-ivory/90 font-sans">Contemporary Residential & Commercial Design</span>
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-auriga-charcoal/50 font-sans block">Type</span>
+                  <span className="text-sm text-auriga-charcoal/90 font-sans">Contemporary Residential & Commercial Design</span>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Calendar className="w-4 h-4 text-auriga-brass mt-0.5" strokeWidth={1.5} />
                 <div>
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-auriga-sand/60 font-sans block">Founded</span>
-                  <span className="text-sm text-auriga-ivory/90 font-sans">2025</span>
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-auriga-charcoal/50 font-sans block">Founded</span>
+                  <span className="text-sm text-auriga-charcoal/90 font-sans">2025</span>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-auriga-brass mt-0.5" strokeWidth={1.5} />
                 <div>
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-auriga-sand/60 font-sans block">Based In</span>
-                  <span className="text-sm text-auriga-ivory/90 font-sans">Bengaluru, India</span>
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-auriga-charcoal/50 font-sans block">Based In</span>
+                  <span className="text-sm text-auriga-charcoal/90 font-sans">Bengaluru, India</span>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -259,8 +259,8 @@ export default function PartnerDossier() {
                   <span className="text-[8px] text-auriga-brass font-sans">#</span>
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-auriga-sand/60 font-sans block">Projects Together</span>
-                  <span ref={countRef} className="text-sm text-auriga-ivory/90 font-sans font-medium">
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-auriga-charcoal/50 font-sans block">Projects Together</span>
+                  <span ref={countRef} className="text-sm text-auriga-charcoal/90 font-sans font-medium">
                     {count}
                   </span>
                 </div>
@@ -269,10 +269,10 @@ export default function PartnerDossier() {
 
             {/* About Text */}
             <div className="max-w-3xl">
-              <p className="text-auriga-ivory/70 text-sm md:text-base leading-relaxed font-sans font-light mb-4">
+              <p className="text-auriga-charcoal/70 text-sm md:text-base leading-relaxed font-sans font-light mb-4">
                 Studio Spectra is a full-service architecture firm rooted in the belief that every structure should speak. Founded by architects with a decade of practice across residential, hospitality, and cultural projects, they bring a rare synthesis of conceptual rigour and liveable warmth to every design they touch.
               </p>
-              <p className="text-auriga-ivory/60 text-sm leading-relaxed font-sans font-light">
+              <p className="text-auriga-charcoal/60 text-sm leading-relaxed font-sans font-light">
                 Studio Spectra leads the architectural vision on select Auriga projects, from initial site studies and spatial planning through to construction documentation. Their ability to translate a client's lifestyle into form is what drew us to them.
               </p>
             </div>
@@ -282,7 +282,7 @@ export default function PartnerDossier() {
               {['Residential Architecture', 'Interior Architecture', 'Space Planning', 'Material Curation'].map((service) => (
                 <span
                   key={service}
-                  className="px-3 py-1.5 border border-auriga-sand/20 text-[10px] uppercase tracking-[0.15em] text-auriga-sand/80 font-sans"
+                  className="px-3 py-1.5 border border-auriga-sand/40 text-[10px] uppercase tracking-[0.15em] text-auriga-charcoal/70 font-sans"
                 >
                   {service}
                 </span>

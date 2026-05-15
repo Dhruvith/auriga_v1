@@ -43,13 +43,13 @@ export default function StatsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-16 md:py-20 bg-auriga-charcoal overflow-hidden">
+    <section ref={sectionRef} className="relative py-16 md:py-20 bg-auriga-ivory overflow-hidden border-y border-auriga-sand/20">
       {/* Marquee Ticker */}
       <div className="overflow-hidden mb-12 border-y border-auriga-sand/10 py-3">
         <div className="animate-marquee whitespace-nowrap flex">
           {[...Array(3)].map((_, i) => (
-            <span key={i} className="text-[10px] uppercase tracking-[0.3em] text-auriga-sand/40 font-sans mx-8 flex-shrink-0">
-              Auriga Homes · Crafting Exceptional Spaces · Architecture & Construction · Est. Since 2018 · Premium Residential · Bespoke Interiors ·
+            <span key={i} className="text-[10px] uppercase tracking-[0.3em] text-auriga-charcoal/30 font-sans mx-8 flex-shrink-0">
+              Auriga Homes, Crafting Exceptional Spaces, Architecture & Construction, Est. Since 2018, Premium Residential, Bespoke Interiors,
             </span>
           ))}
         </div>
@@ -66,7 +66,7 @@ export default function StatsSection() {
               <span className="block font-serif text-4xl md:text-5xl lg:text-6xl text-auriga-brass font-medium mb-2">
                 {stat.value}
               </span>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-auriga-ivory/50 font-sans">
+              <span className="text-[10px] uppercase tracking-[0.2em] text-auriga-charcoal/50 font-sans">
                 {stat.label}
               </span>
             </div>

@@ -5,6 +5,7 @@ import ProjectsSection from '../components/ProjectsSection';
 import PhilosophyQuoteSection from '../components/PhilosophyQuoteSection';
 import HowWeWorkSection from '../components/HowWeWorkSection';
 import ServicesPreview from '../components/ServicesPreview';
+import MeetFoundersSection from '../components/MeetFoundersSection';
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
       <ProjectsSection />
       <PhilosophyQuoteSection />
       <HowWeWorkSection />
+      <MeetFoundersSection />
     </>
   );
 }

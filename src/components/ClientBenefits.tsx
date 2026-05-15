@@ -124,38 +124,38 @@ export default function ClientBenefits() {
             <div
               key={benefit.num}
               ref={(el) => { panelsRef.current[index] = el; }}
-              className="group relative overflow-hidden bg-auriga-charcoal"
+              className="group relative overflow-hidden bg-auriga-marble/30 border border-auriga-sand/20"
             >
               {/* Image */}
-              <div className="relative h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
+              <div className="relative h-[300px] md:h-[350px] lg:h-[400px] overflow-hidden">
                 <img
                   src={benefit.image}
                   alt={benefit.alt}
-                  className="w-full h-[120%] object-cover will-change-transform transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover will-change-transform transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-auriga-charcoal via-auriga-charcoal/50 to-transparent" />
               </div>
 
-              {/* Content Overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
+              {/* Content */}
+              <div className="p-6 lg:p-8">
                 {/* Number Badge */}
                 <div className="mb-4">
-                  <span className="inline-block px-3 py-1 bg-auriga-brass text-auriga-charcoal text-[10px] uppercase tracking-[0.2em] font-sans font-semibold">
+                  <span className="inline-block px-3 py-1 bg-auriga-brass text-auriga-ivory text-[10px] uppercase tracking-[0.2em] font-sans font-semibold">
                     {benefit.num}
                   </span>
                 </div>
 
-                <h3 className="font-serif text-2xl md:text-3xl text-auriga-ivory font-medium mb-3 leading-tight">
+                <h3 className="font-serif text-2xl md:text-3xl text-auriga-charcoal font-medium mb-3 leading-tight">
                   {benefit.title}
                 </h3>
 
-                <p className="text-auriga-ivory/70 text-sm leading-relaxed font-sans font-light">
+                <p className="text-auriga-charcoal/60 text-sm leading-relaxed font-sans font-light">
                   {benefit.desc}
                 </p>
               </div>
 
               {/* Architectural panel border effect */}
-              <div className="absolute inset-0 border border-auriga-sand/10 pointer-events-none group-hover:border-auriga-brass/30 transition-colors duration-700" />
+              <div className="absolute inset-0 border border-auriga-sand/20 pointer-events-none group-hover:border-auriga-brass/40 transition-colors duration-700" />
             </div>
           ))}
         </div>

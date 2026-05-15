@@ -155,20 +155,20 @@ export default function AboutPage() {
       </section>
 
       {/* Difference */}
-      <section ref={diffRef} className="py-24 md:py-32 lg:py-40 bg-auriga-charcoal">
+      <section ref={diffRef} className="py-24 md:py-32 lg:py-40 bg-auriga-ivory">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <h2 className="font-serif text-3xl md:text-4xl text-auriga-ivory font-medium mb-12">The Auriga Difference</h2>
+          <h2 className="font-serif text-3xl md:text-4xl text-auriga-charcoal font-medium mb-12">The Auriga Difference</h2>
           <ul className="space-y-6 max-w-xl mb-12">
             {benefits.map((benefit) => (
               <li key={benefit} className="flex items-start gap-4">
                 <span className="w-6 h-px bg-auriga-brass mt-3 flex-shrink-0" />
-                <span className="text-base text-auriga-ivory/70 font-sans font-light leading-relaxed">{benefit}</span>
+                <span className="text-base text-auriga-charcoal/70 font-sans font-light leading-relaxed">{benefit}</span>
               </li>
             ))}
           </ul>
           <Link
             to="/contact"
-            className="inline-block px-8 py-3.5 border border-auriga-brass text-auriga-brass text-xs uppercase tracking-[0.2em] font-sans font-medium hover:bg-auriga-brass hover:text-auriga-charcoal transition-all duration-500"
+            className="inline-block px-8 py-3.5 border border-auriga-brass text-auriga-brass text-xs uppercase tracking-[0.2em] font-sans font-medium hover:bg-auriga-brass hover:text-auriga-ivory transition-all duration-500"
           >
             Get in Touch
           </Link>
