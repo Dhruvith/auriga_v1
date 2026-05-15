@@ -81,6 +81,20 @@
   animation: marquee 30s linear infinite;
 }
 
+/* WhatsApp pulse animation */
+@keyframes whatsappPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-whatsapp-pulse {
+  animation: whatsappPulse 3s ease-in-out infinite;
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
