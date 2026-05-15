@@ -4,9 +4,9 @@ import gsap from 'gsap';
 
 const navLinks = [
   { label: 'Home', href: '#' },
-  { label: 'What We Do', href: '#' },
-  { label: 'Designs', href: '#' },
-  { label: 'Our Story', href: '#' },
+  { label: 'What We Do', href: '#services' },
+  { label: 'Designs', href: '#designs' },
+  { label: 'Our Story', href: '#our-story' },
   { label: 'Collaborations', href: '#collaborations' },
   { label: 'Get in Touch', href: '#contact' },
 ];
@@ -34,6 +34,17 @@ export default function Navbar() {
     }
   }, []);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#') && href !== '#') {
+      e.preventDefault();
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+      setMobileOpen(false);
+    }
+  };
+
   return (
     <nav
       ref={navRef}
@@ -47,7 +58,7 @@ export default function Navbar() {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
-            <span className="text-auriga-brass text-xl tracking-widest-xl font-serif font-medium">
+            <span className="text-auriga-brass text-xl tracking-[0.15em] font-serif font-medium">
               AURIGA
             </span>
             <span className="text-[10px] text-auriga-brass/80 tracking-[0.3em] uppercase font-sans mt-1">
@@ -61,6 +72,7 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className="text-xs uppercase tracking-[0.18em] text-auriga-charcoal/80 hover:text-auriga-teak transition-colors duration-300 relative group"
               >
                 {link.label}
@@ -91,7 +103,7 @@ export default function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              onClick={() => setMobileOpen(false)}
+              onClick={(e) => handleNavClick(e, link.href)}
               className="text-sm uppercase tracking-[0.15em] text-auriga-charcoal/80 hover:text-auriga-teak transition-colors"
             >
               {link.label}
