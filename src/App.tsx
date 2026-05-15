@@ -1,54 +1,62 @@
-import { useEffect, useRef } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navbar from './components/Navbar';
-import HeroCinematic from './components/HeroCinematic';
-import StatsSection from './components/StatsSection';
-import WhoWeAreSection from './components/WhoWeAreSection';
-import ProjectsSection from './components/ProjectsSection';
-import PhilosophyQuoteSection from './components/PhilosophyQuoteSection';
-import HowWeWorkSection from './components/HowWeWorkSection';
-import ServicesSection from './components/ServicesSection';
-import OurStorySection from './components/OurStorySection';
-import PhilosophySection from './components/PhilosophySection';
-import PartnerDossier from './components/PartnerDossier';
-import ClientBenefits from './components/ClientBenefits';
-import ArchitectInviteCTA from './components/ArchitectInviteCTA';
-import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ServicesPage from './pages/ServicesPage';
+import ProjectsPage from './pages/ProjectsPage';
+import ProjectDetailPage from './pages/ProjectDetailPage';
+import ContactPage from './pages/ContactPage';
 
 gsap.registerPlugin(ScrollTrigger);
 
-function App() {
-  const mainRef = useRef<HTMLDivElement>(null);
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [pathname]);
+  return null;
+}
+
+function AppContent() {
+  const { pathname } = useLocation();
+  const isHome = pathname === '/';
 
   useEffect(() => {
+    // Refresh ScrollTrigger after page transitions
     const timer = setTimeout(() => {
       ScrollTrigger.refresh();
-    }, 500);
+    }, 100);
     return () => clearTimeout(timer);
-  }, []);
+  }, [pathname]);
 
   return (
-    <div ref={mainRef} className="relative min-h-screen bg-auriga-ivory">
-      <Navbar />
+    <div className="relative min-h-screen bg-auriga-ivory">
+      <Navbar isHome={isHome} />
       <main>
-        <HeroCinematic />
-        <StatsSection />
-        <WhoWeAreSection />
-        <ProjectsSection />
-        <PhilosophyQuoteSection />
-        <HowWeWorkSection />
-        <ServicesSection />
-        <OurStorySection />
-        <PhilosophySection />
-        <PartnerDossier />
-        <ClientBenefits />
-        <ArchitectInviteCTA />
-        <ContactSection />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/projects/:slug" element={<ProjectDetailPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
       </main>
       <Footer />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <ScrollToTop />
+      <AppContent />
+    </BrowserRouter>
   );
 }
 
